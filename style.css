@@ -210,14 +210,3 @@ body {
 .login-link p a:hover {
   text-decoration: underline;
 }
-
-.Kirje-Hahmo {
-  float: right;
-  width: 160px;
-  height: 120px;
-}
-
-.header-bar {
-}
-.header-bar .logo {
-}
