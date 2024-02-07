@@ -220,7 +220,65 @@ body {
     border-radius: 50%;
     margin: 0 auto;
   }
-}
-.contact-1 {
-  display: flex;
+  .messenger-link {
+    right: 23px;
+    bottom: 23px;
+    position: fixed;
+    cursor: pointer;
+    display: flex;
+    padding: 10px 15px;
+    background: #fff;
+    border-radius: 20px;
+    align-items: center;
+    opacity: 0.8;
+  }
+
+  .messenger-link i {
+    font-size: 50px;
+  }
+  .contact {
+    width: 100%;
+    border-bottom: 1px solid #000;
+    display: inline-block;
+    padding-bottom: 10px;
+    margin-bottom: 12px;
+  }
+  .contact-left {
+    float: left;
+  }
+
+  .contact-right {
+    float: right;
+    width: 280px;
+  }
+
+  .unread-messages {
+    position: relative;
+    top: -30px;
+    right: 45px;
+    background: #c59d74ab;
+    padding: 4px 4px;
+    border-radius: 20px;
+    display: inline-block;
+    text-align: center;
+    min-width: 30px;
+    min-height: 22px;
+  }
+  .last-message {
+    width: 180px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: list-item;
+    float: left;
+    line-height: 30px;
+  }
+
+  .contacts-container {
+    overflow-y: auto;
+    height: 80vh;
+  }
+  .timestamp {
+    position: static;
+  }
 }
