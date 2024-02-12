@@ -10,45 +10,56 @@
       rel="stylesheet"
     />
 </head>
-  <body>
-    <div class="container">
-      <div class="branding"><!--Header with a search funtion to find previous DMs and Chatrooms-->
-        <h1>ASAP</h1>
-        <img src="Kirje-Hahmo.png" class="logo">
-        <form class="search_bar">
-            <input type="text" placeholder="search">
-            <i class='bx bx-search' onclick="opensearch()"></i>
-        </form>
-      </div>
-      <div class="tab-titles"><!-- Spilts Direct messages and Chatrooms into different tabs -->
-        <p class="tab-links active-link" onclick="opentab('yhteystiedot')">Contacts</p>
-        <p class="tab-links" onclick="opentab('ryhmät')">Rooms</p>
-      </div>
-      <!--Shows your DMs and Chatrooms depending on the current tab-->
-      <div class="tab-contents active-tab" id="yhteystiedot">
-        <div class="contacts">
-          <div class="contacts-container">
-            <div class="contact">
-              <div class="contact-left">
-                <img src="image/avatarplaceholder.png" alt="Avatar" class="avatar">
-              </div>
-              <div class="contact-right">
-                <h2 class="contact-name"> Arttu Aarre</h2>
-                <span class="last-message">Hei, halusin jutella pälälälälällä...</span>
-                <span class="timestamp">12:35</span>
-                <span class="unread-messages">1</span>
-              </div>
-            </div>
-          </div>
-        </div> 
-      </div>
-      <div class="tab-contents" id="ryhmät">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum est repellat porro ratione tempora beatae! Quos ratione assumenda dolorem ducimus facere alias, odit laboriosam blanditiis voluptas quia doloribus suscipit placeat!</p>
-      </div>
-    </div> 
+  <body id="body">
     <div class="messenger-link">
-      <i class='bx bx-envelope'></i>
-      <a href="messenger"></a>
+        <button class="open-button" onclick="toggleForm()"><i class='bx bx-envelope'></i></button>
+    </div>
+    <div class="container">
+        <div class="branding"><!--Header with a search funtion to find previous DMs and Chatrooms-->
+            <h1>ASAP</h1>
+            <img src="Kirje-Hahmo.png" class="logo">
+            <form class="search_bar">
+                <input type="text" placeholder="search">
+                <i class='bx bx-search' onclick="opensearch()"></i>
+            </form>
+        </div>
+        <div class="tab-titles"><!-- Spilts Direct messages and Chatrooms into different tabs -->
+            <p class="tab-links active-link" onclick="opentab('yhteystiedot')">Contacts</p>
+            <p class="tab-links" onclick="opentab('ryhmät')">Rooms</p>
+        </div>
+        <!--Shows your DMs and Chatrooms depending on the current tab-->
+        <div class="tab-contents active-tab" id="yhteystiedot">
+            <div class="contacts">
+                <div class="contacts-container">
+                    <div class="contact">
+                    <div class="contact-left">
+                        <img src="image/avatarplaceholder.png" alt="Avatar" class="avatar">
+                    </div>
+                    <div class="contact-right">
+                        <h2 class="contact-name"> Arttu Aarre</h2>
+                        <span class="last-message">Hei, halusin jutella pälälälälällä...</span>
+                        <span class="timestamp">12:35</span>
+                        <span class="unread-messages">1</span>
+                    </div>
+                    </div>
+                    </div>
+                </div>
+            </div> 
+            <div class="tab-contents" id="ryhmät">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum est repellat porro ratione tempora beatae! Quos ratione assumenda dolorem ducimus facere alias, odit laboriosam blanditiis voluptas quia doloribus suscipit placeat!</p>
+            </div>
+        </div> 
+    </div>
+    <div class="form-popup" id="myForm">
+        <form action="/action_page.php" class="form-container">
+            <label for="Name" class="name"><b>Name</b></label>
+            <input type="text" placeholder="Enter Username" name="name" required>
+
+            <label for="Phonenumber" class="Phonenumber"><b>Phonenumber</b></label>
+            <input type="text" id="phone" placeholder="Enter Puh." name="puh." required>
+
+            <button type="submit" class="btn" onclick="sendForm()">Enter</button>
+        </form>
     </div>
   <script type="text/javascript" src="script.js"></script>
   </body>
