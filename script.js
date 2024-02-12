@@ -67,3 +67,23 @@ updateUnread();
 function updateUnread(){
     
 }
+
+function toggleForm() {
+    console.log("test");
+  var form = document.getElementById("myForm");
+  var body = document.body;
+  var openButton = document.querySelector(".open-button");
+
+  if (form.style.display === "block") {
+    form.style.display = "none";
+    body.classList.remove("form-opened");
+    openButton.style.zIndex = "auto"; // Reset z-index to default
+  } else {
+    form.style.display = "block";
+    body.classList.add("form-opened");
+    openButton.style.zIndex = "1"; // Set z-index to bring the button to the front
+  }
+}
+function sendFrom() {
+    
+}
