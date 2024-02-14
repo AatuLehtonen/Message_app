@@ -1,4 +1,5 @@
-console.log("test");
+// Swiches between the Sign in and Sign up forms.
+
 let register_btn = document.querySelector(".register-btn");
 let login_btn = document.querySelector(".login-btn");
 let form = document.querySelector(".wrapper");
@@ -8,7 +9,7 @@ register_btn.addEventListener("click",()=>{
 login_btn.addEventListener("click",()=>{
     form.classList.remove("change-form");
 })
-
+/*
 function DOajaxCall(){
 
     // create new XML-connection method and open connection to server.
@@ -28,11 +29,11 @@ function DOajaxCall(){
 
     // Send our data to the server.
     ajax.send();
-}
+}*/
 
 let registerUser_btn = document.querySelector(".registerUser-btn")
 registerUser_btn.addEventListener("click",()=>{
-    DOajaxCall();
+    registerUser();
 })
 
 function openTab(evt, cityName) {
@@ -68,6 +69,7 @@ function updateUnread(){
     
 }
 
+// Keskustelut Functions
 function toggleForm() {
     console.log("test");
   var form = document.getElementById("myForm");
@@ -84,6 +86,60 @@ function toggleForm() {
     openButton.style.zIndex = "1"; // Set z-index to bring the button to the front
   }
 }
-function sendFrom() {
-    
+
+function sendForm() {
+
 }
+
+// Sign up functions for the index.html page
+
+function registerUser() {
+    let user = document.querySelector(".Username");
+    let Phonenumber = document.querySelector(".Phonenumber");
+    let Email = document.querySelector(".Email");
+    let Password = document.querySelector(".Password");
+
+
+    if(validateEmail(Email.value)) {
+        
+        // create new XML-connection method and open connection to server.
+        const ajax = new XMLHttpRequest();
+
+        // true at the end means asynchronous, false waits for the response.
+        ajax.open("POST", "http://localhost:88/ASAP/htdocs/Register.php", true);
+
+        // Header's sent the server. this was it understands what type of data it is receiving.
+        ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+        ajax.send("username=" + user + "phone=" + Phonenumber + "email=" + Email + "password=" +Password);
+
+        ajax.onreadystatechange = () => {
+            if (ajax.readyState === XMLHttpRequest.DONE && ajax.status === 200) {
+                console.log(ajax.responseText); // Response from our server
+            }
+        };
+
+        
+    }
+        
+
+}
+
+// Validation email functions for the index.html page
+function validateEmail(email) {
+
+    // Regular expression for a simple email validation
+    let emailRegex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+
+    // Check if the email matches the pattern
+    if (!emailRegex.test(email)) {
+
+      alert("invalid email");
+      document.querySelector(".Email").value="";
+      return false;
+    }
+    else {
+
+        return true;
+    }
+  }

@@ -315,7 +315,7 @@ body {
   .form-container input[type="Phonenumber"] {
     width: 100%;
     padding: 15px;
-    margin: 5px 0 22px 0;
+    margin: 5px 0 15px 0;
     border: none;
     background: #f1f1f1;
     height: 60px;
@@ -374,10 +374,12 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 10px;
   }
   .Phonenumber {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 10px;
   }
 }
