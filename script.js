@@ -94,13 +94,13 @@ function sendForm() {
 // Sign up functions for the index.html page
 
 function registerUser() {
-    let user = document.querySelector(".Username");
-    let Phonenumber = document.querySelector(".Phonenumber");
-    let Email = document.querySelector(".Email");
-    let Password = document.querySelector(".Password");
+    let user = document.querySelector(".Username").value;
+    let Phonenumber = document.querySelector(".Phonenumber").value;
+    let Email = document.querySelector(".Email").value;
+    let Password = document.querySelector(".Password").value;
 
 
-    if(validateEmail(Email.value)) {
+    if(validateEmail(Email)) {
         
         // create new XML-connection method and open connection to server.
         const ajax = new XMLHttpRequest();
@@ -111,7 +111,7 @@ function registerUser() {
         // Header's sent the server. this was it understands what type of data it is receiving.
         ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 
-        ajax.send("username=" + user + "phone=" + Phonenumber + "email=" + Email + "password=" +Password);
+        ajax.send("username=" + user + "&phone=" + Phonenumber + "&email=" + Email + "&password=" + Password);
 
         ajax.onreadystatechange = () => {
             if (ajax.readyState === XMLHttpRequest.DONE && ajax.status === 200) {
